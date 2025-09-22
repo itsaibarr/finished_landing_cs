@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* CSS Normalizer */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reset all input styles except background */
+input {
+  /* Remove all default styling */
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-image: none;
+
+  /* Reset positioning and sizing */
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+
+  /* Reset text and color */
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  text-shadow: inherit;
+  letter-spacing: inherit;
+
+  /* Reset appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Reset cursor */
+  cursor: inherit;
+
+  /* Reset transitions and animations */
+  transition: none;
+  animation: none;
+
+  /* Reset transforms */
+  transform: none;
+  transform-origin: initial;
+
+  /* Reset positioning */
+  position: static;
+  float: none;
+  clear: none;
+  z-index: auto;
+
+  /* Reset overflow */
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+
+  /* Reset list styling */
+  list-style: none;
+  list-style-type: none;
+
+  /* Reset table styling */
+  border-collapse: separate;
+  border-spacing: 0;
+
+  /* Reset quotes */
+  quotes: none;
+
+  /* Reset content */
+  content: normal;
+
+  /* Reset white-space */
+  white-space: normal;
+  word-wrap: normal;
+  word-break: normal;
+
+  /* Reset direction */
+  direction: ltr;
+  unicode-bidi: normal;
+
+  /* Reset visibility */
+  visibility: visible;
+  opacity: 1;
+
+  /* Reset pointer events */
+  pointer-events: auto;
+
+  /* Reset user select */
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-jetbrains-mono);
+  --text-5xl: 2.75rem;
+  --text-xl: 1.375rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  color: #323F73;
 }
+
+.container {
+  @apply max-w-[1137px] flex m-auto items-center justify-between
+}
+
+.nav-links {
+  @apply flex gap-14
+}
+
+.navbar {
+  @apply mt-12
+}
+
+.hero_title {
+  @apply text-5xl max-w-[537px] font-bold
+}
+
+.text {
+  @apply text-[#95AFBA] text-xl max-w-[525px] mt-8 mb-16
+}
+
+.hero_form_input {
+  @apply flex items-center bg-[#F5F8FA] py-6 pl-8 pr-20 gap-6 rounded-l-2xl
+}
+
+.hero_text {
+  @apply flex flex-col mt-[15vh]
+}
+
+.title {
+  @apply text-3xl font-bold
+}
+
+.description {
+  @apply text-base text-[#95AFBA]
+}
+
